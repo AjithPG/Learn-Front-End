@@ -1,0 +1,201 @@
+<html>
+
+<head>
+
+    <title>Bin2Dec</title>
+    <link rel="icon" type="image/png" href="icon/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+
+            background: #263238;
+
+            font-size: 24px;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .main-area {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+        }
+
+
+        .reset-btn-area {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+
+
+        .label-text {
+            color: #fff;
+        }
+
+        .input-area {
+            border: none;
+            border-radius: 10px;
+            padding: 10px 10px;
+
+        }
+
+        .input-area:focus {
+            outline: none;
+        }
+
+        .btn {
+            border: 0;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-convert {
+            background-color: #0288D1;
+        }
+
+        .btn-reset {
+            background-color: #26A69A;
+        }
+
+
+        .btn:focus {
+            outline: none;
+        }
+
+        h2 {
+            color: #C51162;
+
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .github-link {
+            color: #00897B;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .main-area {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .label-text {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Binary 2 Decimal Coverter</h2>
+        <img src="icon/icon-big.svg" class="logo" alt="logo">
+        <div class="main-area">
+
+            <label class="label-text">Enter Binary Number</label>
+            <input type="text" name="binary" id="binary" class="input-area" required>
+
+
+            <button id="convert" class="btn btn-convert">Convert</button>
+
+            <label class="label-text">Decimal Number</label>
+            <input type="text" name="decimal" id="decimal" class="input-area">
+            <div class="reset-btn-area">
+                <button class="btn btn-reset" id="reset">Reset</button>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+    <footer>
+        <p class="info">Made by <a href="https://github.com/AjithPG" class="github-link" title="Github Profile">Ajith PG &#129488</a></p>
+    </footer>
+
+</body>
+<script>
+    var bin = document.getElementById("binary");
+    var dec = document.getElementById("decimal");
+    var conv = document.getElementById("convert");
+    var reset = document.getElementById("reset");
+    var validate = bin.value;
+    var binRGEX = /^-{0,1}\d+$/g.test(validate);
+
+    conv.addEventListener('click', function() {
+        var num = bin.value;
+        if (num === "") {
+            alert("Enter a Binary number");
+        } else if (binRGEX == false) {
+            alert("Enter a valid Binary number");
+        } else {
+            dec.value = bin2Dec(num);
+        }
+
+        function bin2Dec(binary) {
+            var decimal = 0;
+            for (var index = binary.length - 1; index >= 0; index--) {
+                decimal += parseInt(binary[index]) * Math.pow(2, binary.length - 1 - index);
+
+            }
+            return decimal;
+        }
+
+
+    });
+
+    //reset button
+    reset.addEventListener('click', function() {
+        bin.value = "";
+        dec.value = "";
+    })
+
+</script>
+
+</html>
