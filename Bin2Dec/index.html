@@ -166,15 +166,16 @@
     var conv = document.getElementById("convert");
     var reset = document.getElementById("reset");
     var validate = bin.value;
-    var binRGEX = /^-{0,1}\d+$/g.test(validate);
+    //var binRGEX = /^-{0,1}\d+$/g.test(validate);
 
     conv.addEventListener('click', function() {
         var num = bin.value;
         if (num === "") {
             alert("Enter a Binary number");
-        } else if (binRGEX == false) {
-            alert("Enter a valid Binary number");
-        } else {
+        } //else if (binRGEX == false) {
+           // alert("Enter a valid Binary number");
+        //}
+        else {
             dec.value = bin2Dec(num);
         }
 
