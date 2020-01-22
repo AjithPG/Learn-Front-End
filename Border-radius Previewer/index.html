@@ -3,61 +3,129 @@
 <head>
 	<title>Border-Radius Previewer</title>
 	<style>
-		.container{
+		* {
+			box-shadow: border-box;
+		}
+
+		body {
+			margin: 0;
+		}
+
+		.container {
 			display: flex;
-			width:100%;
+			flex-direction: column;
+			width: 100%;
 		}
-		.left-container{
+
+		.sub-container {
+			display: flex;
+
+		}
+
+		.left-container {
 			width: 50%;
+			background-color: aqua;
+			height: 50vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 		}
-		.right-container{
+
+		.right-container {
 			width: 50%;
+			background-color: azure;
+			height: 50vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 		}
-		.box{
+
+		.box {
 			width: 100px;
 			height: 100px;
 			border: 2px solid #000;
-			
-			
+			border-top-left-radius:
+
 		}
-		.code-snippet{
-			color:#fff;
+
+		.code-area {
+			width: 100%;
 			background-color: #000;
-			width: 200px;
-			height: 100px;
+			width: 100%;
+			height: 50vh;
 		}
+
+		.code-snippet {
+			color: #fff;
+
+		}
+
 	</style>
 </head>
 
 <body>
 	<div class="container">
-		<div class="left-container">
-			<h2>Enter your Values</h2>
-			<input type="number" placeholder="border-radius" id="radius">
-			<button onclick="check()">Check</button>
-		</div>
-		<div class="right-container">
-			<h2>Output</h2>
-			<div class="box" id="border-box">
-         
+		<div class="sub-container">
+			<div class="left-container">
+				<h2>Enter your Values</h2>
+				<!--<input type="number" placeholder="border-radius" id="radius">-->
+				<input type="number" placeholder="border-top-left-radius" id="radius-tl">
+				<input type="number" placeholder="border-top-right-radius" id="radius-tr">
+				<input type="number" placeholder="border-bottom--left" id="radius-bl">
+				<input type="number" placeholder="border-bottom-right-radius" id="radius-br">
+				<button onclick="check();">Check</button>
+			</div>
+			<div class="right-container">
+				<h2>Output</h2>
+				<div class="box" id="border-box">
+
+				</div>
 			</div>
 		</div>
-	
-	</div>
-		<div class="code-snippet" id="code">
-			
-			
+
+
+		<div class="code-area">
+			<div class="code-snippet" id="code">
+				<p id="l1"></p>
+				<p id="l2"></p>
+				<p id="l3"></p>
+				<p id="l4"></p>
+
+			</div>
 		</div>
+	</div>
 </body>
 <script>
 	function check() {
-		var borderRadius = document.getElementById("radius");
-		var radiusValue = borderRadius.value;
-		var box=document.getElementById("border-box");
-		var codeValue=box.style.borderRadius =radiusValue+"px";
-		
-		var code=document.getElementById("code");
-		code.innerHTML="border-radius:"+codeValue+";";
+		//Get id
+		//var borderRadius = document.getElementById("radius");
+		var borderRadiusTl = document.getElementById("radius-tl");
+		var borderRadiusTr = document.getElementById("radius-tr");
+		var borderRadiusBl = document.getElementById("radius-bl");
+		var borderRadiusBr = document.getElementById("radius-br");
+
+		//get rectangle box
+		var box = document.getElementById("border-box");
+		//get value
+		//var radiusValue = borderRadius.value;
+		var radiusTl = borderRadiusTl.value;
+		var radiusTr = borderRadiusTr.value;
+		var radiusBl = borderRadiusBl.value;
+		var radiusBr = borderRadiusBr.value;
+
+		console.log(radiusTl);
+		//var codeValue = box.style.borderRadius = radiusValue + "px";
+		var valueTl = box.style.borderTopLeftRadius = radiusTl + "px"
+		var valueTr = box.style.borderTopRightRadius = radiusTr + "px"
+		var valueBl = box.style.borderBottomLeftRadius = radiusBl + "px"
+		var valueBr = box.style.borderBottomRightRadius = radiusBr + "px"
+
+		document.getElementById("l1").innerHTML = "border-top-left:" + valueTl + ";";
+		document.getElementById("l2").innerHTML = "border-top-right:" + valueTr + ";";
+		document.getElementById("l3").innerHTML = "border-bottom-left:" + valueBl + ";";
+		document.getElementById("l4").innerHTML = "border-bottom-right:" + valueBr + ";";
 	}
 
 </script>
