@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+	<title>CSV2JSON</title>
+	<style>
+		.text {
+			width: 99%;
+			height: 200px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h1>CSV 2 JSON CONVERTER</h1>
+	<h3>JSON 2 CSV CONVERTER</h3>
+	<p>Paste your CSV here:</p>
+	<textarea id="csv" class="text">"id","username"
+"1","Steve"
+"2","Vinod"
+"3","Sam"	
+</textarea>
+	<button id="convert" class="">Covert to JSON </button>
+	<button id="download" class="">Download JSON</button>
+	<textarea id="json" class="text">
+
+</textarea>
+</body>
+<script>
+var convButton = document.getElementById("convert");
+convButton.addEventListener("click",function(){
+	var csv = document.getElementById("csv").value;
+ var json = CSV2JSON(csv);
+ document.getElementById("json").value=json;
+	console.log(csv);
+});	
+</script>
+
+</html>
