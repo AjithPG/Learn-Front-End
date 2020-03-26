@@ -5,7 +5,6 @@
 }
 
 body {
-    background-image: url(135deg, hsl(0, 0%, 100%),  hsl(0, 100%, 98%));
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
 }
@@ -25,6 +24,7 @@ body {
     padding: 0 40px;
     background-image: url('images/bg-pattern-desktop.svg');
     background-size: cover;
+    background-position: center center;
 }
 
 .right {
@@ -59,12 +59,6 @@ h1 {
 
 }
 
-@keyframes comeinleft {
-    to {
-        transform: translateX(0%);
-    }
-}
-
 h1 span {
     color: hsl(0, 36%, 70%);
     font-weight: 200;
@@ -79,17 +73,11 @@ p {
     animation: comeinright 0.5s ease forwards;
 }
 
-@keyframes comeinright {
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
 
 form {
     position: relative;
     transform: translateX(-100%);
-    animation: comeinright 0.5s ease forwards;
+    animation: comeinleft 0.5s ease forwards;
     margin-bottom: 40px;
 }
 
@@ -99,16 +87,13 @@ form.error input {
 
 
 input {
-
     background-color: transparent;
-    border: 1px solid hsl(0, 36%, 70%);
+    border:1px solid hsl(0, 36%, 70%);
     padding: 10px 15px;
     border-radius: 50px;
     font-size: 16px;
     width: 100%;
     height: 55px;
-
-
 }
 
 input:focus {
@@ -129,9 +114,9 @@ button {
     padding: 15px;
     width: 100px;
     border-radius: 50px;
+    position: absolute;
     top: 0;
     right: 0;
-    position: absolute;
     height: 55px;
     transition: opacity 0.2s ease;
 }
@@ -176,7 +161,22 @@ form.success .success-img{
 form.error small {
     display: block;
 }
+/* animation */
 
+@keyframes comeinleft {
+    to {
+        transform: translateX(0%);
+    }
+}
+@keyframes comeinright {
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+/* animation */
+
+/* Mobile screen */
 @media screen and (max-width:768px) {
     .right {
         display: none;
@@ -193,3 +193,4 @@ form.error small {
         margin-right: -40px;
     }
 }
+/* mobile screen */
