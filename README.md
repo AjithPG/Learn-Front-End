@@ -23,6 +23,9 @@ if you want to practice star this repository https://github.com/florinpop17/app-
 <p>Project 4:Light-Dark Toggle Switch(30/1/2020)</p>
 
 <p>Repo Link: https://github.com/AjithPG/Learn-Front-End/tree/master/Light-Dark-Toggle<p>
+      
+<p>Coming soon Page</p>
+<p>Repo Link:https://github.com/AjithPG/Learn-Front-End/tree/master/Base%20Apparel%20coming%20soon%20page</p>
 
 <h3>Follow Me on</h3>
 Twitter-https://twitter.com/ajithpg01
