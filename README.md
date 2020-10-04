@@ -24,8 +24,14 @@ if you want to practice star this repository https://github.com/florinpop17/app-
 
 <p>Repo Link: https://github.com/AjithPG/Learn-Front-End/tree/master/Light-Dark-Toggle<p>
       
-<p>Coming soon Page</p>
+<p>Project 5: Coming soon Page</p>
 <p>Repo Link:https://github.com/AjithPG/Learn-Front-End/tree/master/Base%20Apparel%20coming%20soon%20page</p>
+
+<p>Project 6: Background Changer</p>
+<p>Repo Link:https://github.com/AjithPG/Learn-Front-End/tree/master/Background_color_changer</p>
+
+<p>Project 7: Counter</p>
+<p>Repo Link:https://github.com/AjithPG/Learn-Front-End/tree/master/counter</p>
 
 <h3>Follow Me on</h3>
 Twitter-https://twitter.com/ajithpg01
